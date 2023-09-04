@@ -37,12 +37,13 @@ namespace WordCounter.Services
                     Console.WriteLine($"File not found: {file}");
                 }
             }
+   
             Console.WriteLine($"{linesInTotal}\t{wordsIntotal}\t{bytesInTotal}\tTotal");
         }
 
-        public int wordCount(string filePath)
+        public int wordCount(string file)
         {
-            string text = File.ReadAllText(filePath);
+            string text = File.ReadAllText(file);
             string[] words = text.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
             return words.Length;
         }
